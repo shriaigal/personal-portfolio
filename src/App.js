@@ -244,15 +244,27 @@ const css = `
     display: flex; flex-direction: column;
   }
   .project-card:hover { border-color: rgba(37,99,235,0.4); transform: translateY(-4px); }
-  .project-img {
-    height: 220px; padding: 16px; background: var(--card);
-    border-bottom: 1px solid var(--border); display: flex;
-    justify-content: center; align-items: center; overflow: hidden; position: relative;
-  }
-  .project-image {
-    width: 100%; height: 100%; object-fit: contain; border-radius: 10px;
-    border: 1px solid var(--border); background: #0f172a; transition: transform .4s ease;
-  }
+.project-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05);
+}
   .project-card:hover .project-image { transform: scale(1.03); }
   .project-img-overlay {
     position: absolute; inset: 0;
@@ -292,6 +304,7 @@ const css = `
   }
   @keyframes slidein { from { transform: translateY(16px); opacity: 0; } to { transform: none; opacity: 1; } }
   .modal-header {
+  z-index: 999;
     padding: 28px 32px 20px; border-bottom: 1px solid var(--border);
     display: flex; justify-content: space-between; align-items: flex-start;
     position: sticky; top: 0; background: var(--card);
@@ -854,7 +867,7 @@ const SKILLS_DATA = [
 const PROJECTS_DATA = [
   {
     id: 1,
-    image: "./projects/SAP.jpg",
+    image: "./projects/SAP.png",
     title: "Student Academic Portal",
     description: "A comprehensive academic management platform with QR attendance, analytics dashboards, and PDF report generation built using Flask and SQLite.",
     stack: ["Python", "Flask", "SQLite", "Chart.js", "Tailwind CSS"],
@@ -882,7 +895,7 @@ const PROJECTS_DATA = [
   },
   {
     id: 3,
-    image: "./projects/traffic.png",
+    image: "./projects/TAS.png",
     title: "Traffic Analytics System",
     description: "An intelligent transportation platform combining XGBoost-based traffic prediction with graph algorithms for real-time route optimization.",
     stack: ["Python", "Flask", "XGBoost", "Scikit-learn", "Pandas", "NumPy"],
@@ -1066,7 +1079,7 @@ function ProjectModal({ project, onClose }) {
             </div>
           </div>
           <div style={{ display: "flex", gap: 10, marginTop: 8 }}>
-            <a href="https://github.com/shridatta" className="project-btn primary" style={{ flex: 1, textDecoration: "none" }}>⬡ View on GitHub</a>
+            <a href="https://github.com/shriaigal" className="project-btn primary" style={{ flex: 1, textDecoration: "none" }}>⬡ View on GitHub</a>
           </div>
         </div>
       </div>
@@ -1496,7 +1509,7 @@ export default function Portfolio() {
                       {proj.stack.map(t => <span key={t} className="project-tag">{t}</span>)}
                     </div>
                     <div className="project-actions">
-                      <a href="https://github.com/shridatta" className="project-btn">⬡ GitHub</a>
+                      <a href="https://github.com/shriaigal" className="project-btn">⬡ GitHub</a>
                       <button className="project-btn primary" onClick={() => setModalProject(proj)}>Read more →</button>
                     </div>
                   </div>
