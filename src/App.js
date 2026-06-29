@@ -1011,13 +1011,21 @@ function useScrollSpy() {
 function useFadeIn(ref) {
   useEffect(() => {
     if (!ref.current) return;
+
     const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { entry.target.classList.add("visible"); obs.unobserve(entry.target); } },
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          obs.unobserve(entry.target);
+        }
+      },
       { threshold: 0.1 }
     );
+
     obs.observe(ref.current);
+
     return () => obs.disconnect();
-  }, []);
+  }, [ref]); // ✅
 }
 
 function FadeIn({ children, delay = 0 }) {
