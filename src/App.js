@@ -900,7 +900,7 @@ const CERTS_DATA = [
 
   {
     id: 4,
-    image: "/certificates/aws.png",
+    image: "./certificates/aws.png",
     title: "Cloud Computing in AWS",
     org: "CertoMeter",
     completed: "2026",
@@ -909,12 +909,12 @@ const CERTS_DATA = [
     description:
       "Completed cloud computing fundamentals on AWS covering EC2, S3, IAM, networking, deployment, and cloud architecture — with hands-on exercises for provisioning and managing cloud resources.",
     skills: ["AWS", "EC2", "S3", "IAM", "Networking", "Cloud Computing", "Virtual Machines"],
-    link: "/certificates/aws.png",
-    download: "/certificates/aws.png",
+    link: "./certificates/aws.png",
+    download: "./certificates/aws.png",
   },
   {
     id: 3,
-    image: "/certificates/hackverse2.0.png",
+    image: "./certificates/hackverse2.0.png",
     title: "HackVerse 2.0",
     org: "Department of MCA, BMSIT&M",
     completed: "2026",
@@ -923,12 +923,12 @@ const CERTS_DATA = [
     description:
       "Led Team NextGen Bharat as Team Leader in the National Level HackVerse 2.0 Hackathon, building and presenting an AI-powered solution under strict time constraints.",
     skills: ["AI", "Machine Learning", "Python", "Flask", "Team Leadership", "Presentation", "Rapid Prototyping"],
-    link: "/certificates/hackverse2.0.png",
-    download: "/certificates/hackverse2.0.png",
+    link: "./certificates/hackverse2.0.png",
+    download: "./certificates/hackverse2.0.png",
   },
     {
     id: 2,
-    image: "/certificates/dbms.jpeg",
+    image: "./certificates/dbms.jpeg",
     title: "DBMS with Oracle PL/SQL",
     org: "SQE Systems & Solutions × BMSIT&M",
     completed: "June 2026",
@@ -937,12 +937,12 @@ const CERTS_DATA = [
     description:
       "Completed an intensive Oracle Database & PL/SQL training covering SQL, PL/SQL programming, stored procedures, functions, triggers, packages, cursors, and relational database design with normalization principles.",
     skills: ["Oracle SQL", "PL/SQL", "Stored Procedures", "Functions", "Triggers", "Packages", "Database Design", "Normalization"],
-    link: "/certificates/dbms.jpeg",
-    download: "/certificates/dbms.jpeg",
+    link: "./certificates/dbms.jpeg",
+    download: "./certificates/dbms.jpeg",
   },
   {
     id: 1,
-    image: "/certificates/tcs.png",
+    image: "./certificates/tcs.png",
     title: "TCS iON Career Edge – Young Professional",
     org: "Tata Consultancy Services",
     completed: "2025",
@@ -951,8 +951,8 @@ const CERTS_DATA = [
     description:
       "Completed TCS iON Young Professional certification covering communication, workplace readiness, business etiquette, interview preparation, and professional ethics in a corporate environment.",
     skills: ["Communication", "Professional Skills", "Business Etiquette", "Interview Skills", "Presentation", "Resume Building"],
-    link: "/certificates/tcs.png",
-    download: "/certificates/tcs.png",
+    link: "./certificates/tcs.png",
+    download: "./certificates/tcs.png",
   },
 ];
 
