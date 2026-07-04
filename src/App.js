@@ -314,7 +314,7 @@ const css = `
     font-size: 22px; line-height: 1; padding: 4px; transition: color var(--transition);
   }
   .modal-close:hover { color: var(--text); }
-  .modal-body { padding: 28px 32px; }
+  .modal-body { padding: 28px 32px; text-align:justify; }
   .modal-section { margin-bottom: 28px; }
   .modal-section h3 {
     font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
@@ -850,8 +850,11 @@ const css = `
   }
 `;
 const top_logo="</>";
-
 const resumePDF = "/resume/A_S_Shridatta_Aigal_Resume.pdf";
+
+const MCA_DATA = {
+  cgpa: 8.50
+};
 
 const SKILLS_DATA = [
   { icon: "💻", name: "Programming Languages", skills: ["Java", "Python", "JavaScript", "SQL"] },
@@ -907,8 +910,71 @@ const PROJECTS_DATA = [
     learning: "Practical experience with end-to-end ML pipeline: data preprocessing, feature engineering, model training with XGBoost, evaluation, and deployment within a Flask application.",
     architecture: "Data layer (Pandas/NumPy) → ML layer (Scikit-learn/XGBoost) → API layer (Flask REST) → Frontend (Chart.js heatmaps, interactive dashboard).",
   },
+  {
+  id: 4,
+  image: "./projects/AgriVision.png",
+  title: "AgriVision AI",
+  description: "A full-stack AI agriculture platform integrating plant disease detection, weather intelligence, crop recommendations, analytics, and secure user management to support modern precision farming.",
+  stack: [
+    "Python",
+    "Flask",
+    "TensorFlow",
+    "MobileNetV2",
+    "OpenCV",
+    "MongoDB",
+    "PyMongo",
+    "NumPy",
+    "Pandas",
+    "Scikit-learn",
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+    "Chart.js"
+  ],
+  features: [
+    "AI Plant Disease Detection",
+    "Deep Learning Prediction",
+    "Weather Intelligence",
+    "Smart Crop Recommendations",
+    "Analytics Dashboard",
+    "User Authentication",
+    "OTP Email Verification",
+    "Admin Dashboard",
+    "Prediction History",
+    "PDF Report Generation",
+    "Feedback Management",
+    "Multilingual Support",
+    "Dark & Light Theme",
+    "Responsive Design"
+  ],
+  overview: "AgriVision AI is a comprehensive Smart Agriculture platform that integrates Deep Learning, Computer Vision, Weather Intelligence, and modern web technologies to assist farmers in identifying plant diseases, receiving crop recommendations, monitoring environmental conditions, and managing agricultural insights through a unified web application.",
+  problem: "Farmers often struggle to accurately identify crop diseases at an early stage, resulting in reduced yields and financial losses. Traditional diagnosis requires agricultural experts, while many existing digital solutions lack AI-powered prediction, weather-aware recommendations, multilingual accessibility, and centralized farm management.",
+  solution: "Developed an intelligent agriculture platform using TensorFlow MobileNetV2 for plant disease detection, OpenCV for image processing, Open-Meteo API for live weather intelligence, MongoDB for scalable data management, and Flask for backend services. The platform provides real-time disease prediction, AI-powered crop recommendations, secure user authentication, multilingual support, analytics dashboards, and comprehensive administrative management.",
+  challenges: "Training and integrating a deep learning model for accurate disease classification, optimizing image preprocessing pipelines, implementing secure OTP-based authentication, synchronizing real-time weather information with AI recommendations, designing scalable MongoDB data structures, and building responsive multilingual interfaces while maintaining high application performance.",
+  learning: "Strengthened expertise in full-stack AI application development, transfer learning with MobileNetV2, computer vision using OpenCV, TensorFlow model deployment, MongoDB integration, Flask architecture, REST API development, secure authentication, weather API integration, analytics visualization, multilingual application design, and production-ready software engineering practices.",
+  architecture: "Presentation Layer (HTML5, CSS3, JavaScript, Jinja2) → Application Layer (Flask, REST APIs, Authentication, Business Logic) → AI Layer (TensorFlow, MobileNetV2, OpenCV, Image Processing) → Data Layer (MongoDB, PyMongo, Prediction History, User Data) → External Services (Open-Meteo Weather API, SMTP Email Service) → Analytics & Reporting (Chart.js, ReportLab, PDF Reports)."
+}
 ];
-
+const hackathons = [
+  {
+    id: 1,
+    icon: "🏆",
+    title: "HackVerse 2.0",
+    role: "Team Leader of NextGen Bharat · National Level Hackathon",
+    description:
+      "Participated in the National Level Hackathon organized by the Department of MCA, BMSIT&M. Led the team to design, develop, and present an AI-powered solution within strict time constraints, strengthening rapid prototyping, teamwork, and problem-solving skills.",
+    technologies: [
+      "AI/ML",
+      "Team Collaboration",
+      "Rapid Prototyping",
+      "Python",
+      "Flask"
+    ],
+    achievement: "🏅 National Level Participation Certificate",
+    certificateId: 3,
+    projectId: 4
+  }
+];
 const CERTS_DATA = [
 
   {
@@ -925,6 +991,7 @@ const CERTS_DATA = [
     link: "./certificates/AWS.png",
     download: "./certificates/AWS.png",
   },
+  
   {
     id: 3,
     image: "./certificates/Hackverse2.0.png",
@@ -938,6 +1005,7 @@ const CERTS_DATA = [
     skills: ["AI", "Machine Learning", "Python", "Flask", "Team Leadership", "Presentation", "Rapid Prototyping"],
     link: "./certificates/Hackverse2.0.png",
     download: "./certificates/Hackverse2.0.png",
+    hackathon: true,
   },
     {
     id: 2,
@@ -1211,6 +1279,21 @@ function CertCard({ cert, onClick }) {
 
 // ── Main Portfolio component ──────────────────────────────────────────────────
 export default function Portfolio() {
+
+
+const totalProjects = PROJECTS_DATA.length;
+const totalHackathons = hackathons.length;
+const totalCertificates = CERTS_DATA.length;
+
+const totalTechnologies = new Set(
+  SKILLS_DATA.flatMap((category) =>
+    category.skills.map((skill) =>
+      typeof skill === "string" ? skill : skill.name
+    )
+  )
+).size;
+
+
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [modalProject, setModalProject] = useState(null);
@@ -1228,6 +1311,34 @@ export default function Portfolio() {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setMobileOpen(false);
   }, []);
+
+  // Scrolls to the Projects section, then opens the matching project modal.
+  // Looks the project up by title so reordering PROJECTS_DATA never breaks the button.
+
+  // Scrolls to the Certifications section, then opens the matching certificate modal.
+const openHackathonCertificate = (id) => {
+  const cert = CERTS_DATA.find(c => c.id === id);
+
+  if (!cert) return;
+
+  scrollTo("certifications");
+
+  setTimeout(() => {
+    setActiveCert(cert);
+  }, 700);
+};
+
+const openHackathonProject = (id) => {
+  const project = PROJECTS_DATA.find(p => p.id === id);
+
+  if (!project) return;
+
+  scrollTo("projects");
+
+  setTimeout(() => {
+    setModalProject(project);
+  }, 700);
+};
 
   const handleFormChange = (e) => setFormState(s => ({ ...s, [e.target.name]: e.target.value }));
 
@@ -1315,6 +1426,17 @@ export default function Portfolio() {
     target="_blank"
     rel="noopener noreferrer"
    className="btn-secondary">⬇ Resume</a>
+                 
+
+
+
+
+
+
+
+
+
+
                 </div>
               </FadeIn>
             </div>
@@ -1367,13 +1489,13 @@ export default function Portfolio() {
             <FadeIn delay={100}>
               <div className="about-stats">
                 {[
-                  { icon: "🎓", value: "MCA", label: "BMSIT&M, Bengaluru" },
-                  { icon: "⭐", value: "8.50", label: "Current CGPA" },
-                  { icon: "📁", value: "3+", label: "Major Projects" },
-                  { icon: "🏆", value: "1+", label: "Hackathons" },
-                  { icon: "🛠️", value: "20+", label: "Technologies" },
-                  { icon: "📜", value: "4+", label: "Certifications" },
-                ].map((s, i) => (
+  { icon: "🎓", value: "MCA", label: "BMSIT&M, Bengaluru" },
+  { icon: "⭐", value: MCA_DATA.cgpa.toFixed(2), label: "Current CGPA" },
+  { icon: "📁", value: `${totalProjects}+`, label: "Major Projects" },
+  { icon: "🏆", value: `${totalHackathons}+`, label: "Hackathons" },
+  { icon: "🛠️", value: `${totalTechnologies}+`, label: "Technologies" },
+  { icon: "📜", value: `${totalCertificates}+`, label: "Certifications" },
+].map((s, i) => (
                   <div key={i} className="stat-card">
                     <div className="stat-icon">{s.icon}</div>
                     <div className="stat-value">{s.value}</div>
@@ -1401,7 +1523,7 @@ export default function Portfolio() {
           <FadeIn delay={100}>
             <div className="edu-timeline">
               {[
-                { degree: "Master of Computer Applications (MCA)", institution: "BMS Institute of Technology & Management, Bengaluru", duration: "2025 – 2027 · 2nd Semester", cgpa: "CGPA: 8.50", desc: "Deepening expertise in advanced programming, software engineering, cloud technologies, machine learning, and full-stack development. Actively working on practical projects and national-level hackathons." },
+                { degree: "Master of Computer Applications (MCA)", institution: "BMS Institute of Technology & Management, Bengaluru", duration: "2025 – 2027 · 2nd Semester", cgpa: MCA_DATA.cgpa.toFixed(2), desc: "Deepening expertise in advanced programming, software engineering, cloud technologies, machine learning, and full-stack development. Actively working on practical projects and national-level hackathons." },
                 { degree: "Bachelor of Computer Applications (BCA)", institution: "Dr. B. B. Hegde First Grade College, Kundapura", duration: "2022 – 2025", cgpa: "CGPA: 8.23", desc: "Strong foundations in programming, databases, OOP, web development, and software design. Developed multiple academic and industry-inspired projects using Python, Flask, SQLite, JavaScript, HTML, and CSS." },
                 { degree: "Pre-University Course (Commerce)", institution: "Varasiddi Vinayaka PU College, Keradi", duration: "2020 – 2022", cgpa: null, desc: null },
                 { degree: "Secondary School Leaving Certificate (SSLC)", institution: "Government High School, Nittur", duration: "Completed 2020", cgpa: null, desc: null },
@@ -1526,36 +1648,84 @@ export default function Portfolio() {
 
       {/* HACKATHONS */}
       <section id="hackathons">
-        <div className="container">
-          <FadeIn>
-            <div className="section-header">
-              <div className="section-eyebrow">Hackathons</div>
-              <h2 className="section-title">Competitive experience</h2>
-              <p className="section-subtitle">Building under pressure, collaborating fast, and shipping functional prototypes.</p>
-            </div>
-          </FadeIn>
-          <FadeIn delay={100}>
-            <div className="hack-timeline">
-              <div className="hack-card">
-                <div className="hack-icon">🏆</div>
-                <div>
-                  <div className="hack-title">HackVerse 2.0</div>
-                  <div className="hack-role">Team Leader of NextGen Bharat · National Level Hackathon</div>
-                  <div className="hack-desc">
-                    Participated in the National Level Hackathon organized by the Department of MCA, BMSIT&M. Collaborated as a team member to design, implement, and present an AI-powered solution within strict time constraints. The experience strengthened rapid prototyping skills, cross-functional teamwork, and real-time problem-solving under pressure.
-                  </div>
-                  <div className="hack-chips">
-                    {["AI/ML","Team Collaboration","Rapid Prototyping","Python","Flask"].map(t => (
-                      <span key={t} className="hack-chip">{t}</span>
-                    ))}
-                  </div>
-                  <div className="hack-achievement">🏅 National Level Participation Certificate</div>
-                </div>
+  <div className="container">
+    <FadeIn>
+      <div className="section-header">
+        <div className="section-eyebrow">Hackathons</div>
+        <h2 className="section-title">Competitive Experience</h2>
+        <p className="section-subtitle">
+          Building under pressure, collaborating with teams, and delivering
+          innovative solutions within limited time.
+        </p>
+        
+      </div>
+    </FadeIn>
+
+    <div className="hack-timeline">
+      {hackathons.map((hack, index) => (
+        <FadeIn key={hack.id} delay={index * 100}>
+          <div className="hack-card">
+            <div className="hack-icon">{hack.icon}</div>
+
+            <div>
+              <div className="hack-title">{hack.title}</div>
+
+              <div className="hack-role">
+                {hack.role}
               </div>
+
+              <div className="hack-desc">
+                {hack.description}
+              </div>
+
+              <div className="hack-chips">
+                {hack.technologies.map((tech) => (
+                  <span key={tech} className="hack-chip">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              <div className="hack-achievement">
+                {hack.achievement}
+              </div>
+
+<div
+  style={{
+    display: "flex",
+    gap: "10px",
+    marginTop: "18px",
+    flexWrap: "wrap"
+  }}
+>
+
+  {hack.projectId && (
+    <button
+      className="btn-primary"
+      onClick={() => openHackathonProject(hack.projectId)}
+    >
+      🚀 View Application
+    </button>
+  )}
+
+  {hack.certificateId && (
+    <button
+      className="btn-secondary"
+      onClick={() => openHackathonCertificate(hack.certificateId)}
+    >
+      🏆 View Certificate
+    </button>
+  )}
+
+</div>
+              
             </div>
-          </FadeIn>
-        </div>
-      </section>
+          </div>
+        </FadeIn>
+      ))}
+    </div>
+  </div>
+</section>
 
       <hr className="section-divider" />
 
