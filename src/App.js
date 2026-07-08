@@ -860,8 +860,8 @@ const SKILLS_DATA = [
   { icon: "💻", name: "Programming Languages", skills: ["Java", "Python", "JavaScript"] },
   { icon: "🎨", name: "Frontend", skills: ["HTML5", "CSS3", "JavaScript", "Responsive Design"] },
   { icon: "⚙️", name: "Backend", skills: ["Flask", "REST APIs", "Authentication", "Session Management"] },
-  { icon: "🗄️", name: "Database", skills: ["Oracle SQL", "SQLite", "MongoDB (Learning)"] },
-  { icon: "☁️", name: "Cloud — AWS", skills: ["EC2", "S3", "ECR"] },
+  { icon: "🗄️", name: "Database", skills: ["Oracle SQL", "SQLite", "MongoDB"] },
+  { icon: "☁️", name: "Cloud Computing in AWS", skills: ["EC2", "S3", "ECR"] },
   { icon: "🐳", name: "DevOps", skills: ["Docker", "Jenkins", "GitHub Actions", "CI/CD Pipelines", "Git", "GitHub"] },
   { icon: "🤖", name: "Machine Learning", skills: ["ML Fundamentals", "Data Preprocessing"] },
   { icon: "📐", name: "Core Concepts", skills: ["Data Structures & Algorithms", "OOPs", "DBMS", "Operating Systems"] },
@@ -1774,7 +1774,7 @@ const openHackathonProject = (id) => {
                   <div className="learning-icon">{item.icon}</div>
                   <div>
                     <div className="learning-name">{item.name}</div>
-                    <div className="learning-status">{item.status}</div>
+                    {/* <div className="learning-status">{item.status}</div> */}
                   </div>
                 </div>
               </FadeIn>
