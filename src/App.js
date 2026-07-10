@@ -881,6 +881,7 @@ const PROJECTS_DATA = [
     challenges: "Designing a QR-based attendance system that prevents proxy marking, and generating PDF reports dynamically from live database data required custom solutions with Python libraries.",
     learning: "Gained deep experience in Flask session management, SQLite relationships, Chart.js visualizations, and Python-based PDF generation.",
     architecture: "MVC pattern with Flask Blueprints separating admin, faculty, and student modules. SQLite handles data persistence with normalized schema design.",
+    live: "https://student-academic-portal-sap.vercel.app/",
   },
   {
     id: 2,
@@ -1146,9 +1147,40 @@ function ProjectModal({ project, onClose }) {
               {project.stack.map(t => <span key={t} className="project-tag">{t}</span>)}
             </div>
           </div>
-          <div style={{ display: "flex", gap: 10, marginTop: 8 }}>
-            <a href="https://github.com/shriaigal" className="project-btn primary" style={{ flex: 1, textDecoration: "none" }}>⬡ View on GitHub</a>
-          </div>
+          <div
+  style={{
+    display: "flex",
+    gap: 10,
+    marginTop: 8,
+    flexWrap: "wrap",
+  }}
+>
+
+  {project.github && (
+    <a
+      href={project.github}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="project-btn primary"
+      style={{ flex: 1, textDecoration: "none" }}
+    >
+      ⬡ View on GitHub
+    </a>
+  )}
+
+  {project.live && (
+    <a
+      href={project.live}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="project-btn secondary"
+      style={{ flex: 1, textDecoration: "none" }}
+    >
+      🌐 Live Demo
+    </a>
+  )}
+
+</div>
         </div>
       </div>
     </div>
