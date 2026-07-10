@@ -1147,39 +1147,25 @@ function ProjectModal({ project, onClose }) {
               {project.stack.map(t => <span key={t} className="project-tag">{t}</span>)}
             </div>
           </div>
-          <div
-  style={{
-    display: "flex",
-    gap: 10,
-    marginTop: 8,
-    flexWrap: "wrap",
-  }}
->
-
-  {project.github && (
-    <a
-      href={project.github}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="project-btn primary"
-      style={{ flex: 1, textDecoration: "none" }}
-    >
-      ⬡ View on GitHub
-    </a>
-  )}
-
+          <div style={{ display: "flex", gap: 10, marginTop: 8 }}>
+            <a href="https://github.com/shriaigal" className="project-btn primary" style={{ flex: 1, textDecoration: "none" }}>⬡ View on GitHub</a>
+          </div>
+          <div style={{ display: "flex", gap: 10, marginTop: 8 }}>
   {project.live && (
     <a
       href={project.live}
       target="_blank"
       rel="noopener noreferrer"
-      className="project-btn secondary"
-      style={{ flex: 1, textDecoration: "none" }}
+      className="project-btn primary"
+      style={{
+        flex: 1,
+        textDecoration: "none",
+        textAlign: "center",
+      }}
     >
       🌐 Live Demo
     </a>
   )}
-
 </div>
         </div>
       </div>
