@@ -1,43 +1,460 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- ═══════════════════════════════════════════════════
+         VIEWPORT & MOBILE
+    ═══════════════════════════════════════════════════ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- ═══════════════════════════════════════════════════
+         PRIMARY META
+    ═══════════════════════════════════════════════════ -->
+    <title>A S Shridatta Aigal | Software Development Engineer | Full Stack Developer | Bengaluru</title>
+
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Portfolio of A S Shridatta Aigal — MCA student at BMSIT&M Bengaluru, Software Development Engineer, Full Stack Developer skilled in Python, Java, React, Flask, AWS, Docker, and CI/CD. Open to SDE opportunities."
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <meta name="keywords" content="A S Shridatta Aigal, Shridatta Aigal, Shridatta, Aigal, Shriaigal, Software Development Engineer, Full Stack Developer, Python Developer, React Developer, Flask Developer, Java Developer, AWS Developer, Web Developer, DevOps, Machine Learning, Cloud Computing, BMSIT, MCA Student, Bengaluru, Portfolio" />
+
+    <meta name="author" content="A S Shridatta Aigal" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="language" content="English" />
+    <meta name="rating" content="general" />
+    <meta name="category" content="Technology, Software Development, Portfolio" />
+    <meta name="classification" content="Portfolio" />
+    <meta name="subject" content="Software Development Engineer Portfolio — A S Shridatta Aigal" />
+    <meta name="coverage" content="Worldwide" />
+    <meta name="distribution" content="Global" />
+    <meta name="target" content="all" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+
+    <!-- ═══════════════════════════════════════════════════
+         CANONICAL
+    ═══════════════════════════════════════════════════ -->
+    <link rel="canonical" href="https://shriaigal.vercel.app/" />
+
+    <!-- ═══════════════════════════════════════════════════
+         GEO TAGS
+    ═══════════════════════════════════════════════════ -->
+    <meta name="geo.region" content="IN-KA" />
+    <meta name="geo.placename" content="Bengaluru, Karnataka, India" />
+    <meta name="geo.position" content="12.9716;77.5946" />
+    <meta name="ICBM" content="12.9716, 77.5946" />
+
+    <!-- ═══════════════════════════════════════════════════
+         THEME COLOR
+    ═══════════════════════════════════════════════════ -->
+    <meta name="theme-color" content="#DC2626" />
+    <meta name="msapplication-TileColor" content="#DC2626" />
+    <meta name="msapplication-navbutton-color" content="#DC2626" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <!-- ═══════════════════════════════════════════════════
+         APPLE / PWA META
+    ═══════════════════════════════════════════════════ -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Shridatta Aigal" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="A S Shridatta Aigal — Portfolio" />
+    <meta name="msapplication-TileImage" content="%PUBLIC_URL%/logo192.png" />
+    <meta name="msapplication-config" content="%PUBLIC_URL%/browserconfig.xml" />
+
+    <!-- ═══════════════════════════════════════════════════
+         OPEN GRAPH
+    ═══════════════════════════════════════════════════ -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="A S Shridatta Aigal — Portfolio" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:url" content="https://shriaigal.vercel.app/" />
+    <meta property="og:title" content="A S Shridatta Aigal | Software Development Engineer | Full Stack Developer" />
+    <meta property="og:description" content="Portfolio of A S Shridatta Aigal — MCA student at BMSIT&M Bengaluru. Full Stack Developer skilled in Python, Java, React, Flask, AWS, Docker, and CI/CD. Open to SDE roles." />
+    <meta property="og:image" content="https://shriaigal.vercel.app/profile.jpg" />
+    <meta property="og:image:secure_url" content="https://shriaigal.vercel.app/profile.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="A S Shridatta Aigal — Software Development Engineer, Full Stack Developer, Bengaluru" />
+    <meta property="profile:first_name" content="Shridatta" />
+    <meta property="profile:last_name" content="Aigal" />
+    <meta property="profile:username" content="shriaigal" />
+
+    <!-- ═══════════════════════════════════════════════════
+         TWITTER CARD
+    ═══════════════════════════════════════════════════ -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@shriaigal" />
+    <meta name="twitter:creator" content="@shriaigal" />
+    <meta name="twitter:title" content="A S Shridatta Aigal | Software Development Engineer | Full Stack Developer" />
+    <meta name="twitter:description" content="Portfolio of A S Shridatta Aigal — MCA student at BMSIT&M Bengaluru. Full Stack Developer skilled in Python, Java, React, Flask, AWS, Docker, and CI/CD. Open to SDE roles." />
+    <meta name="twitter:image" content="https://shriaigal.vercel.app/profile.jpg" />
+    <meta name="twitter:image:alt" content="A S Shridatta Aigal — Software Development Engineer, Bengaluru" />
+    <meta name="twitter:domain" content="shriaigal.vercel.app" />
+
+    <!-- ═══════════════════════════════════════════════════
+         FAVICON & ICONS
+    ═══════════════════════════════════════════════════ -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" sizes="any" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon-16x16.png" type="image/png" sizes="16x16" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon-32x32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="mask-icon" href="%PUBLIC_URL%/favicon.ico" color="#DC2626" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+
+    <!-- ═══════════════════════════════════════════════════
+         MANIFEST
+    ═══════════════════════════════════════════════════ -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- ═══════════════════════════════════════════════════
+         DNS PREFETCH & PRECONNECT
+    ═══════════════════════════════════════════════════ -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="//cdn.emailjs.com" />
+    <link rel="dns-prefetch" href="//www.google-analytics.com" />
+    <link rel="dns-prefetch" href="//github.com" />
+    <link rel="dns-prefetch" href="//linkedin.com" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+
+    <!-- ═══════════════════════════════════════════════════
+         GOOGLE RICH PREVIEW / SEARCH CONSOLE VERIFICATION
+         Replace content value with your actual token
+    ═══════════════════════════════════════════════════ -->
+    <!-- <meta name="google-site-verification" content="YOUR_GOOGLE_SEARCH_CONSOLE_TOKEN" /> -->
+
+    <!-- ═══════════════════════════════════════════════════
+         STRUCTURED DATA — JSON-LD
+    ═══════════════════════════════════════════════════ -->
+
+    <!-- Person -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://shriaigal.vercel.app/#person",
+      "name": "A S Shridatta Aigal",
+      "alternateName": [
+        "Shridatta Aigal",
+        "Shridatta",
+        "Aigal",
+        "Shriaigal",
+        "Shri Aigal",
+        "A.S. Shridatta Aigal",
+        "Shri Datta Aigal"
+      ],
+      "givenName": "Shridatta",
+      "familyName": "Aigal",
+      "honorificPrefix": "A S",
+      "url": "https://shriaigal.vercel.app/",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://shriaigal.vercel.app/profile.jpg",
+        "width": 400,
+        "height": 400,
+        "caption": "A S Shridatta Aigal — Software Development Engineer"
+      },
+      "description": "A S Shridatta Aigal is an MCA student at BMS Institute of Technology and Management (BMSIT&M), Bengaluru, and a Full Stack Software Development Engineer skilled in Python, Java, React, Flask, AWS, Docker, CI/CD, and Machine Learning.",
+      "jobTitle": "Software Development Engineer",
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Software Development Engineer",
+        "occupationLocation": {
+          "@type": "City",
+          "name": "Bengaluru"
+        },
+        "skills": "Python, Java, JavaScript, React, Flask, HTML5, CSS3, REST APIs, Oracle SQL, SQLite, MongoDB, AWS EC2, AWS S3, Docker, Jenkins, GitHub Actions, CI/CD, Machine Learning, XGBoost, Scikit-learn, Git, GitHub, Linux, DevOps"
+      },
+      "knowsAbout": [
+        "Python",
+        "Java",
+        "JavaScript",
+        "React",
+        "Flask",
+        "REST APIs",
+        "Full Stack Development",
+        "AWS Cloud Computing",
+        "Docker",
+        "DevOps",
+        "CI/CD Pipelines",
+        "Machine Learning",
+        "SQL",
+        "Oracle Database",
+        "SQLite",
+        "MongoDB",
+        "Git",
+        "GitHub",
+        "Linux",
+        "Responsive Web Design",
+        "Data Structures and Algorithms",
+        "Software Engineering"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bengaluru",
+        "addressRegion": "Karnataka",
+        "addressCountry": "IN"
+      },
+      "email": "shriaigal@gmail.com",
+      "telephone": "+91-6363352453",
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "BMS Institute of Technology and Management",
+          "alternateName": "BMSIT&M",
+          "url": "https://www.bmsit.ac.in/",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bengaluru",
+            "addressRegion": "Karnataka",
+            "addressCountry": "IN"
+          }
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Dr. B. B. Hegde First Grade College",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Kundapura",
+            "addressRegion": "Karnataka",
+            "addressCountry": "IN"
+          }
+        }
+      ],
+      "sameAs": [
+        "https://github.com/shriaigal",
+        "https://www.linkedin.com/in/a-s-shridatta-aigal-27b926323/"
+      ]
+    }
+    </script>
+
+    <!-- WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://shriaigal.vercel.app/#website",
+      "name": "A S Shridatta Aigal — Portfolio",
+      "alternateName": "Shridatta Aigal Portfolio",
+      "url": "https://shriaigal.vercel.app/",
+      "description": "Official portfolio website of A S Shridatta Aigal, Software Development Engineer and Full Stack Developer based in Bengaluru, India.",
+      "inLanguage": "en-IN",
+      "publisher": {
+        "@id": "https://shriaigal.vercel.app/#person"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://shriaigal.vercel.app/#projects"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- WebPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://shriaigal.vercel.app/#webpage",
+      "url": "https://shriaigal.vercel.app/",
+      "name": "A S Shridatta Aigal | Software Development Engineer | Full Stack Developer | Bengaluru",
+      "description": "Portfolio of A S Shridatta Aigal — MCA student at BMSIT&M Bengaluru, Software Development Engineer skilled in Python, Java, React, Flask, AWS, Docker, and CI/CD.",
+      "isPartOf": {
+        "@id": "https://shriaigal.vercel.app/#website"
+      },
+      "about": {
+        "@id": "https://shriaigal.vercel.app/#person"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://shriaigal.vercel.app/"
+          }
+        ]
+      },
+      "inLanguage": "en-IN",
+      "potentialAction": {
+        "@type": "ReadAction",
+        "target": ["https://shriaigal.vercel.app/"]
+      }
+    }
+    </script>
+
+    <!-- ProfilePage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "@id": "https://shriaigal.vercel.app/#profilepage",
+      "url": "https://shriaigal.vercel.app/",
+      "name": "A S Shridatta Aigal — Developer Profile",
+      "description": "Professional profile page of A S Shridatta Aigal, MCA student and Software Development Engineer from Bengaluru, India.",
+      "mainEntity": {
+        "@id": "https://shriaigal.vercel.app/#person"
+      },
+      "inLanguage": "en-IN",
+      "dateModified": "2026-08-07"
+    }
+    </script>
+
+    <!-- ItemList — Projects -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Projects by A S Shridatta Aigal",
+      "description": "Featured software development projects by A S Shridatta Aigal including AI, Full Stack, and Cloud-powered applications.",
+      "url": "https://shriaigal.vercel.app/#projects",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Student Academic Portal",
+            "description": "A comprehensive academic management platform with QR attendance, analytics dashboards, and PDF report generation built using Flask and SQLite.",
+            "applicationCategory": "WebApplication",
+            "operatingSystem": "Web Browser",
+            "programmingLanguage": ["Python", "Flask", "SQLite", "JavaScript", "HTML5", "CSS3"],
+            "url": "https://student-academic-portal-sap.vercel.app/",
+            "author": { "@id": "https://shriaigal.vercel.app/#person" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "AgriPrice Portal",
+            "description": "A role-based agricultural marketplace connecting farmers and buyers with OTP verification, multilingual support, and real-time price comparison.",
+            "applicationCategory": "WebApplication",
+            "operatingSystem": "Web Browser",
+            "programmingLanguage": ["Python", "Flask", "SQLite", "JavaScript", "HTML5", "CSS3"],
+            "author": { "@id": "https://shriaigal.vercel.app/#person" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "AI-Powered Traffic Analytics & Route Optimization System",
+            "description": "An intelligent transportation platform combining XGBoost-based traffic prediction with graph algorithms for real-time route optimization.",
+            "applicationCategory": "WebApplication",
+            "operatingSystem": "Web Browser",
+            "programmingLanguage": ["Python", "Flask", "XGBoost", "Scikit-learn", "Pandas", "NumPy"],
+            "author": { "@id": "https://shriaigal.vercel.app/#person" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "AgriVision AI",
+            "description": "A full-stack AI agriculture platform integrating plant disease detection, weather intelligence, crop recommendations, and secure user management using TensorFlow MobileNetV2.",
+            "applicationCategory": "WebApplication",
+            "operatingSystem": "Web Browser",
+            "programmingLanguage": ["Python", "Flask", "TensorFlow", "OpenCV", "MongoDB", "JavaScript"],
+            "author": { "@id": "https://shriaigal.vercel.app/#person" }
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Organization (Portfolio) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://shriaigal.vercel.app/#organization",
+      "name": "A S Shridatta Aigal — Portfolio",
+      "url": "https://shriaigal.vercel.app/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://shriaigal.vercel.app/logo192.png",
+        "width": 192,
+        "height": 192
+      },
+      "description": "Personal portfolio and professional profile of A S Shridatta Aigal, Software Development Engineer and Full Stack Developer based in Bengaluru, Karnataka, India.",
+      "founder": {
+        "@id": "https://shriaigal.vercel.app/#person"
+      },
+      "sameAs": [
+        "https://github.com/shriaigal",
+        "https://www.linkedin.com/in/a-s-shridatta-aigal-27b926323/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "shriaigal@gmail.com",
+        "telephone": "+91-6363352453",
+        "contactType": "personal",
+        "areaServed": "IN",
+        "availableLanguage": "English"
+      }
+    }
+    </script>
+
+    <!-- BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "A S Shridatta Aigal Portfolio",
+          "item": "https://shriaigal.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Projects",
+          "item": "https://shriaigal.vercel.app/#projects"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Skills",
+          "item": "https://shriaigal.vercel.app/#skills"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Contact",
+          "item": "https://shriaigal.vercel.app/#contact"
+        }
+      ]
+    }
+    </script>
+
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      You need to enable JavaScript to run this application. Visit the portfolio of
+      <strong>A S Shridatta Aigal</strong>, Software Development Engineer and Full Stack Developer
+      based in Bengaluru, India — skilled in Python, Java, React, Flask, AWS, Docker, and CI/CD.
+    </noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>
