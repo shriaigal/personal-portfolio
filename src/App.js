@@ -259,7 +259,7 @@ const css = `
     width: 48px; height: 2px; background: var(--border); z-index: 0;
   }
   .journey-item.active:not(:last-child)::after { background: linear-gradient(to right, var(--primary), var(--orange-soft)); }
-  .journey-dot-wrap { display: flex; justify-content: center; margin-bottom: 12px; }
+  .journey-dot-wrap { display: flex; justify-content: center; margin-bottom: 12px; margin-top: 4px; }
   .journey-dot {
     width: 42px; height: 42px; border-radius: 50%; background: #FFFFFF;
     border: 2px solid var(--border); display: flex; align-items: center;
